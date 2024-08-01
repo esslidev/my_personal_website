@@ -21,7 +21,7 @@ class CustomField extends StatefulWidget {
   final bool wrap; // New wrap parameter
 
   const CustomField({
-    Key? key,
+    super.key,
     this.backgroundColor,
     this.padding,
     this.margin,
@@ -38,7 +38,7 @@ class CustomField extends StatefulWidget {
     this.height,
     this.gap = 0.0, // Default value for gap
     this.wrap = false, // Default value for wrap
-  }) : super(key: key);
+  });
 
   @override
   State<CustomField> createState() => _CustomFieldState();
@@ -87,19 +87,7 @@ class _CustomFieldState extends State<CustomField> {
         break;
       case FieldArrangement.position:
         content = Stack(
-          children: widget.children.map((child) {
-            // Example of handling positioned widgets by checking key type
-            if (child.key is Key &&
-                (child.key as Key).toString() == 'Positioned') {
-              return child;
-            } else {
-              return Positioned(
-                left: 50.0, // Example left position
-                top: 50.0, // Example top position
-                child: child,
-              );
-            }
-          }).toList(),
+          children: widget.children,
         );
         break;
     }

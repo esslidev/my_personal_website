@@ -12,7 +12,9 @@ class MyBlogLocation extends BeamLocation<BeamState> {
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
     final List<BeamPage> pages = [
       const BeamPage(
-          key: ValueKey('my-blog'), title: 'my-blog', child: MyBlogScreen()),
+          key: ValueKey('my-blog'),
+          title: 'Ali Ess | My blog',
+          child: MyBlogScreen()),
     ];
     return pages;
   }

@@ -1,3 +1,4 @@
+import 'package:ali_ess_website/config/theme/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -285,7 +286,7 @@ class _CustomButtonState extends State<CustomButton> {
   _buildText() {
     return Text(
       widget.text!,
-      style: TextStyle(
+      style: AppThemes.bodyText.copyWith(
         color: widget.isActive
             ? widget.onActiveStyle?.textColor
             : _isHovered

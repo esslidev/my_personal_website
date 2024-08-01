@@ -12,7 +12,8 @@ class HomeLocation extends BeamLocation {
   List<BeamPage> buildPages(
       BuildContext context, RouteInformationSerializable state) {
     final List<BeamPage> pages = [
-      const BeamPage(key: ValueKey('home'), title: 'home', child: HomeScreen()),
+      const BeamPage(
+          key: ValueKey('home'), title: 'Ali Ess | Home', child: HomeScreen()),
     ];
     return pages;
   }

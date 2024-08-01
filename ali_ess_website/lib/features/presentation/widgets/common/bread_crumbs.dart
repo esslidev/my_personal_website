@@ -83,7 +83,7 @@ class _BreadCrumbsWidgetState extends State<BreadCrumbs> {
               Beamer.of(context).beamToNamed(breadCrumbsPaths[i]);
             });
           },
-          textColor: AppColors.greenBianchi,
+          textColor: AppColors.dark.primaryColor2,
         ));
       } else {
         widgets.add(_buildCustomButton(

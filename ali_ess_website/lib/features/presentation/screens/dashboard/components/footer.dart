@@ -9,7 +9,7 @@ import '../../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../../core/util/responsive_size_adapter.dart';
 import '../../../widgets/common/custom_button.dart';
 import '../../../widgets/common/custom_text.dart';
-import '../../../widgets/common/field.dart';
+import '../../../widgets/common/custom_field.dart';
 
 class FooterComponent extends StatefulWidget {
   const FooterComponent({super.key});

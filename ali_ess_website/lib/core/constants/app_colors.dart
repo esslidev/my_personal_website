@@ -2,24 +2,28 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // global colors
-
-  static const Color greenBianchi = Color(0xFF06623B);
-  static const Color grayTahitianPearl = Color(0xFF273746);
-  static const Color yellowHoney = Color(0xFFFEBD56);
-  static const Color blueScooter = Color(0xFF2B889D);
+  static const Color blackSatinDeep = Color(0xFF1C1C20);
   static const Color whiteSolid = Color(0xFFFFFFFF);
+  static const Color whiteTitanium = Color(0xFFE3E3E4);
+  static const Color yellowColombianGold = Color(0xFF97985D);
+  static const Color greenCalliste = Color(0xFF7B7C4F);
+  static const Color grayTahitianPearl = Color(0xFF273746);
+  static const Color blueScooter = Color(0xFF2B889D);
   static LightTheme get light => LightTheme();
   static DarkTheme get dark => DarkTheme();
 }
 
 class LightTheme {
-  final Color primaryColor1 = AppColors.yellowHoney;
-  final Color primaryColor2 = AppColors.grayTahitianPearl;
-  final Color primaryColor3 = AppColors.whiteSolid;
+  final Color primaryColor1 = AppColors.yellowColombianGold;
+  final Color primaryColor2 = AppColors.greenCalliste;
+  final Color primaryColor3 = AppColors.whiteTitanium;
 }
 
 class DarkTheme {
-  final Color primaryColor1 = AppColors.greenBianchi;
-  final Color primaryColor2 = AppColors.grayTahitianPearl;
-  final Color primaryColor3 = AppColors.whiteSolid;
+  final Color appBackground = AppColors.blackSatinDeep;
+  final Color headlineText = AppColors.whiteSolid;
+  final Color bodyText = AppColors.whiteTitanium;
+  final Color primaryColor1 = AppColors.yellowColombianGold;
+  final Color primaryColor2 = AppColors.greenCalliste;
+  final Color primaryColor3 = AppColors.whiteTitanium;
 }

@@ -13,7 +13,7 @@ class DashboardLocation extends BeamLocation<BeamState> {
     final List<BeamPage> pages = [
       const BeamPage(
           key: ValueKey('dashboard'),
-          title: 'dashboard',
+          title: 'Ali Ess | Dashboard',
           child: DashboardScreen()),
     ];
     return pages;

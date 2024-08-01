@@ -31,6 +31,7 @@ class ImagesPaths {
 
 class VectorsPaths {
 // Home nav icons paths
+  final String logo = 'assets/vectors/logo.svg';
   final String profileIcon = 'assets/vectors/profile-icon.svg';
   final String wishlistIcon = 'assets/vectors/wishlist-icon.svg';
   final String cartIcon = 'assets/vectors/cart-icon.svg';

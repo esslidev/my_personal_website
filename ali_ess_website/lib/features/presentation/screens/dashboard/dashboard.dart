@@ -1,9 +1,11 @@
+import 'package:ali_ess_website/features/presentation/widgets/common/custom_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/enums/app_enums.dart';
 import '../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../core/util/responsive_size_adapter.dart';
-import '../../widgets/common/field.dart';
+import '../../widgets/common/custom_field.dart';
+import 'components/header.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -30,10 +32,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Widget _buildDesktop(BuildContext context) {
-    return const CustomField(
+    return CustomField(
+      height: 2000,
       arrangement: FieldArrangement.column,
-      children: [
-        //...
+      padding:
+          EdgeInsets.symmetric(vertical: R.size(50), horizontal: R.size(150)),
+      children: const [
+        HeaderComponent(),
       ],
     );
   }

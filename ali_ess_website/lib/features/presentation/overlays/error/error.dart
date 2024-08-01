@@ -62,7 +62,7 @@ class ErrorOverlay {
                 style: AppThemes.headline.copyWith(
                     fontSize: R.size(60),
                     letterSpacing: R.size(5),
-                    color: AppColors.greenBianchi.withOpacity(.8)),
+                    color: AppColors.dark.primaryColor2.withOpacity(.8)),
               ),
               SizedBox(height: R.size(20)),
               Text(
@@ -86,7 +86,7 @@ class ErrorOverlay {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: AppColors.greenBianchi,
+                  backgroundColor: AppColors.dark.primaryColor2,
                   elevation: 0,
                   padding: R.padding(20),
                   shape: RoundedRectangleBorder(

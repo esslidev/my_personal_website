@@ -49,9 +49,9 @@ class BusyOverlay {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const CircularProgressIndicator(
+              CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(
-                    AppColors.greenBianchi), // Green progress indicator
+                    AppColors.dark.primaryColor2), // Green progress indicator
               ),
               SizedBox(height: R.size(20)),
               Text(localizationService.translate('loadingScreen.loading'),

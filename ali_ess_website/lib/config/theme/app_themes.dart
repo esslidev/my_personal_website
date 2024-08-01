@@ -8,18 +8,18 @@ class AppThemes {
     brightness: Brightness.light,
     primaryColor: Colors.black, // Set your primary color
     fontFamily: 'Work-Sans',
-    scaffoldBackgroundColor: AppColors.whiteSolid,
+    scaffoldBackgroundColor: AppColors.dark.appBackground,
   );
 
   static const TextStyle headline = TextStyle(
     fontWeight: FontWeight.w500,
-    color: AppColors.grayTahitianPearl,
+    color: AppColors.whiteSolid,
   );
-  static const TextStyle secondaryHeadline = TextStyle(
+  static TextStyle secondaryHeadline = TextStyle(
     fontWeight: FontWeight.w600,
-    color: AppColors.grayTahitianPearl,
+    color: AppColors.dark.bodyText,
   );
 
-  static const TextStyle bodyText =
-      TextStyle(color: Colors.black, fontWeight: FontWeight.w400);
+  static TextStyle bodyText =
+      TextStyle(color: AppColors.dark.bodyText, fontWeight: FontWeight.w400);
 }

@@ -13,7 +13,7 @@ class BadRoutingLocation extends BeamLocation<BeamState> {
     final List<BeamPage> pages = [
       const BeamPage(
           key: ValueKey('bad-routing'),
-          title: 'bad-routing',
+          title: 'Ali Ess | Bad routing',
           child: BadRoutingScreen()),
     ];
     return pages;

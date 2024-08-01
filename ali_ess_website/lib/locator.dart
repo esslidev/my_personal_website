@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/util/route_path_service.dart';
 import 'core/util/localization_service.dart';
 import 'features/presentation/bloc/app_blocs/route/route_bloc.dart';
+import 'features/presentation/controllers/persisted_background/persisted_background_controller.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -32,4 +33,8 @@ Future<void> setupLocator() async {
   // Dependencies
 
   //UseCases
+
+  // Controllers
+  locator.registerLazySingleton<PersistedBackgroundController>(
+      () => PersistedBackgroundController());
 }

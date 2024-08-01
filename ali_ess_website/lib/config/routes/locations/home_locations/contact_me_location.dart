@@ -13,7 +13,7 @@ class ContactMeLocation extends BeamLocation<BeamState> {
     final List<BeamPage> pages = [
       const BeamPage(
           key: ValueKey('contact-me'),
-          title: 'contact-me',
+          title: 'Ali Ess | Contact me',
           child: ContactMeScreen()),
     ];
     return pages;
