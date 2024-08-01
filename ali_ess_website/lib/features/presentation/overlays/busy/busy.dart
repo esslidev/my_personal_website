@@ -56,8 +56,7 @@ class BusyOverlay {
               SizedBox(height: R.size(20)),
               Text(localizationService.translate('loadingScreen.loading'),
                   style: AppThemes.bodyText.copyWith(
-                      fontSize: R.size(25),
-                      color: AppColors.grayTahitianPearl)),
+                      fontSize: R.size(25), color: AppColors.dark.bodyText)),
             ],
           ),
         ),

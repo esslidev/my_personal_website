@@ -63,17 +63,6 @@ class _BreadCrumbsWidgetState extends State<BreadCrumbs> {
     for (int i = 0; i <= routeTree.length - 1; i++) {
       breadCrumbsPaths.add('${breadCrumbsPaths.join('')}/${routeTree[i]}');
       if (i == 0) {
-        widgets.add(_buildCustomButton(
-          title: AppPaths.routes.getRouteName(breadCrumbsPaths[i]),
-          icon: AppPaths.vectors.homeIcon,
-        ));
-        widgets.add(
-          SvgPicture.asset(
-            AppPaths.vectors.greaterThanIcon,
-            color: AppColors.grayTahitianPearl,
-            width: R.size(6),
-          ),
-        );
       } else if (i == routeTree.length - 1) {
         widgets.add(_buildCustomButton(
           title: AppPaths.routes.getRouteName(breadCrumbsPaths[i]),
@@ -95,11 +84,6 @@ class _BreadCrumbsWidgetState extends State<BreadCrumbs> {
             });
           },
         ));
-        widgets.add(SvgPicture.asset(
-          AppPaths.vectors.greaterThanIcon,
-          color: AppColors.grayTahitianPearl,
-          width: R.size(6),
-        ));
       }
     }
     return widgets;
@@ -114,7 +98,6 @@ class _BreadCrumbsWidgetState extends State<BreadCrumbs> {
     return CustomButton(
       text: title,
       textSize: R.size(10),
-      textColor: textColor ?? AppColors.grayTahitianPearl,
       fontWeight: FontWeight.w500,
       padding: EdgeInsets.symmetric(
         vertical: R.size(5),
@@ -124,13 +107,8 @@ class _BreadCrumbsWidgetState extends State<BreadCrumbs> {
       borderRadius: R.size(2),
       svgIconPath: icon,
       iconWidth: R.size(12),
-      iconColor: AppColors.grayTahitianPearl,
       iconTextPadding: R.size(4),
-      onHoverStyle: CustomButtonStyle(
-        textColor: textColor ?? AppColors.grayTahitianPearl,
-        iconColor: AppColors.grayTahitianPearl,
-        backgroundColor: AppColors.grayTahitianPearl.withOpacity(0.08),
-      ),
+      onHoverStyle: CustomButtonStyle(),
       onPressed: onPressed,
     );
   }

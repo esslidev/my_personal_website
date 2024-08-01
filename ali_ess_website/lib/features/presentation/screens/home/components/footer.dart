@@ -41,50 +41,49 @@ class _HeaderComponentState extends State<FooterComponent> {
     return CustomField(
         arrangement: FieldArrangement.column,
         width: double.infinity,
-        backgroundColor: AppColors.light.primaryColor2,
+        backgroundColor: AppColors.dark.primaryColor1.withOpacity(0.1),
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        padding:
-            EdgeInsets.symmetric(vertical: R.size(30), horizontal: R.size(200)),
-        gap: R.size(40),
+        padding: EdgeInsets.symmetric(vertical: R.size(80)),
+        gap: R.size(20),
         children: [
-          Image.asset(
-            AppPaths.images.logo,
-            color: AppColors.whiteSolid,
-            height: R.size(70),
-          ),
           IntrinsicWidth(
             child: CustomText(
-              text: '"Enjoy homestyle cooking, minus the kitchen chaos!"',
-              fontSize: R.size(24),
-              fontWeight: FontWeight.w200,
-              color: AppColors.whiteSolid,
+              text: 'SOCIAL PRESENCE',
+              fontSize: R.size(80),
+              letterSpacing: R.size(6),
+              fontWeight: FontWeight.w700,
+              color: AppColors.dark.primaryColor2.withOpacity(0.6),
             ),
           ),
           IntrinsicWidth(
             child: CustomField(
                 arrangement: FieldArrangement.row,
-                gap: R.size(20),
+                gap: R.size(60),
                 children: [
                   CustomButton(
-                    svgIconPath: AppPaths.vectors.facebookIcon,
+                    svgIconPath: AppPaths.vectors.githubIcon,
                     iconColor: AppColors.light.primaryColor3,
-                    iconWidth: R.size(32),
+                    backgroundColor: AppColors.light.primaryColor1,
+                    width: R.size(60),
+                    height: R.size(60),
+                    iconWidth: R.size(36),
                   ),
                   CustomButton(
-                    svgIconPath: AppPaths.vectors.twitterIcon,
+                    svgIconPath: AppPaths.vectors.linkedinIcon,
                     iconColor: AppColors.light.primaryColor3,
-                    iconWidth: R.size(32),
+                    backgroundColor: AppColors.light.primaryColor1,
+                    width: R.size(60),
+                    height: R.size(60),
+                    iconWidth: R.size(30),
                   ),
                   CustomButton(
-                    svgIconPath: AppPaths.vectors.instagramIcon,
+                    svgIconPath: AppPaths.vectors.upworkIcon,
                     iconColor: AppColors.light.primaryColor3,
-                    iconWidth: R.size(32),
-                  ),
-                  CustomButton(
-                    svgIconPath: AppPaths.vectors.youtubeIcon,
-                    iconColor: AppColors.light.primaryColor3,
-                    iconWidth: R.size(32),
+                    backgroundColor: AppColors.light.primaryColor1,
+                    width: R.size(60),
+                    height: R.size(60),
+                    iconWidth: R.size(36),
                   )
                 ]),
           )

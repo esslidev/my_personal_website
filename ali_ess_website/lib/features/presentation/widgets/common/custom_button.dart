@@ -1,6 +1,6 @@
 import 'package:ali_ess_website/config/theme/app_themes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/enums/app_enums.dart';
 import '../../../../core/resources/custom_dropdown_menu_item.dart';
@@ -222,30 +222,38 @@ class _CustomButtonState extends State<CustomButton> {
   }
 
   Widget _buildButtonContent() {
+    if (widget.svgIconPath != null && widget.text == null) {
+      // Only icon is present, center it
+      return Center(child: _buildIcon());
+    }
+
     switch (widget.iconPosition) {
       case CustomButtonIconPosition.top:
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.svgIconPath != null) _buildIcon(),
-            if (widget.svgIconPath != null)
+            if (widget.svgIconPath != null && widget.text != null)
               SizedBox(height: widget.iconTextPadding ?? R.size(6)),
             if (widget.text != null) _buildText(),
           ],
         );
       case CustomButtonIconPosition.left:
-        return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          if (widget.svgIconPath != null) _buildIcon(),
-          if (widget.svgIconPath != null)
-            SizedBox(width: widget.iconTextPadding ?? R.size(6)),
-          if (widget.text != null) _buildText(),
-        ]);
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (widget.svgIconPath != null) _buildIcon(),
+            if (widget.svgIconPath != null && widget.text != null)
+              SizedBox(width: widget.iconTextPadding ?? R.size(6)),
+            if (widget.text != null) _buildText(),
+          ],
+        );
       case CustomButtonIconPosition.right:
         return Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.text != null) _buildText(),
-            if (widget.svgIconPath != null)
+            if (widget.text != null && widget.svgIconPath != null)
               SizedBox(width: widget.iconTextPadding ?? R.size(6)),
             if (widget.svgIconPath != null) _buildIcon(),
           ],
@@ -255,18 +263,22 @@ class _CustomButtonState extends State<CustomButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.text != null) _buildText(),
-            if (widget.svgIconPath != null)
+            if (widget.text != null && widget.svgIconPath != null)
               SizedBox(height: widget.iconTextPadding ?? R.size(6)),
             if (widget.svgIconPath != null) _buildIcon(),
           ],
         );
       default:
-        return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          if (widget.svgIconPath != null) _buildIcon(),
-          if (widget.svgIconPath != null)
-            SizedBox(height: widget.iconTextPadding ?? R.size(6)),
-          if (widget.text != null) _buildText(),
-        ]); // Handle the default case here if needed
+        // Default case when the icon should be centered
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (widget.svgIconPath != null) _buildIcon(),
+            if (widget.svgIconPath != null && widget.text != null)
+              SizedBox(width: widget.iconTextPadding ?? R.size(6)),
+            if (widget.text != null) _buildText(),
+          ],
+        );
     }
   }
 

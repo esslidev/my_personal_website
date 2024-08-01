@@ -5,7 +5,7 @@ import '../../../../core/enums/app_enums.dart';
 import '../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../core/util/responsive_size_adapter.dart';
 import '../../widgets/common/custom_field.dart';
-import 'components/header.dart';
+import '../home/components/header.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -37,9 +37,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       arrangement: FieldArrangement.column,
       padding:
           EdgeInsets.symmetric(vertical: R.size(50), horizontal: R.size(150)),
-      children: const [
-        HeaderComponent(),
-      ],
+      children: const [],
     );
   }
 }

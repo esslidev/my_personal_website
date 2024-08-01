@@ -7,7 +7,7 @@ class AppThemes {
   static ThemeData themeData = ThemeData(
     brightness: Brightness.light,
     primaryColor: Colors.black, // Set your primary color
-    fontFamily: 'Work-Sans',
+    fontFamily: 'barlow-condensed',
     scaffoldBackgroundColor: AppColors.dark.appBackground,
   );
 

@@ -39,15 +39,9 @@ class VectorsPaths {
   final String arrowDownIcon = 'assets/vectors/arrow-down-icon.svg';
   final String longArrowRightIcon = 'assets/vectors/long-arrow-right-icon.svg';
   final String ratingStarIcon = 'assets/vectors/rating-star-icon.svg';
-  final String facebookIcon = 'assets/vectors/facebook-icon.svg';
-  final String instagramIcon = 'assets/vectors/instagram-icon.svg';
-  final String twitterIcon = 'assets/vectors/twitter-icon.svg';
-  final String youtubeIcon = 'assets/vectors/youtube-icon.svg';
-  final String homeIcon = 'assets/vectors/home-icon.svg';
-  final String dashboardIcon = 'assets/vectors/dashboard-icon.svg';
-  final String settingsIcon = 'assets/vectors/settings-icon.svg';
-  final String signOutIcon = 'assets/vectors/sign-out-icon.svg';
-  final String greaterThanIcon = 'assets/vectors/greater-than-icon.svg';
+  final String upworkIcon = 'assets/vectors/upwork-icon.svg';
+  final String githubIcon = 'assets/vectors/github-icon.svg';
+  final String linkedinIcon = 'assets/vectors/linkedin-icon.svg';
 }
 
 class RoutesPaths {

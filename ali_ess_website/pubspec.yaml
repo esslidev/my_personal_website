@@ -48,61 +48,51 @@ flutter:
     - assets/icons/
     - assets/translations/
   fonts:
-    - family: Roboto
+    - family: barlow-condensed
       fonts:
-        - asset: assets/fonts/roboto-bold.ttf
-          weight: 700
-        - asset: assets/fonts/roboto-regular.ttf
-        - asset: assets/fonts/roboto-italic.ttf
-          style: italic
-        - asset: assets/fonts/roboto-bolditalic.ttf
-          style: italic
-          weight: 700
-    - family: Work-Sans
-      fonts:
-        - asset: assets/fonts/work-sans-thin.ttf
+        - asset: assets/fonts/barlow-condensed-thin.ttf
           weight: 100
-        - asset: assets/fonts/work-sans-thinitalic.ttf
+        - asset: assets/fonts/barlow-condensed-thinitalic.ttf
           weight: 100
           style: italic
-        - asset: assets/fonts/work-sans-extralight.ttf
+        - asset: assets/fonts/barlow-condensed-extralight.ttf
           weight: 200
-        - asset: assets/fonts/work-sans-extralightitalic.ttf
+        - asset: assets/fonts/barlow-condensed-extralightitalic.ttf
           weight: 200
           style: italic
-        - asset: assets/fonts/work-sans-light.ttf
+        - asset: assets/fonts/barlow-condensed-light.ttf
           weight: 300
-        - asset: assets/fonts/work-sans-lightitalic.ttf
+        - asset: assets/fonts/barlow-condensed-lightitalic.ttf
           weight: 300
           style: italic
-        - asset: assets/fonts/work-sans-regular.ttf
+        - asset: assets/fonts/barlow-condensed-regular.ttf
           weight: 400
-        - asset: assets/fonts/work-sans-regularitalic.ttf
+        - asset: assets/fonts/barlow-condensed-regularitalic.ttf
           weight: 400
           style: italic
-        - asset: assets/fonts/work-sans-medium.ttf
+        - asset: assets/fonts/barlow-condensed-medium.ttf
           weight: 500
-        - asset: assets/fonts/work-sans-mediumitalic.ttf
+        - asset: assets/fonts/barlow-condensed-mediumitalic.ttf
           weight: 500
           style: italic
-        - asset: assets/fonts/work-sans-semibold.ttf
+        - asset: assets/fonts/barlow-condensed-semibold.ttf
           weight: 600
-        - asset: assets/fonts/work-sans-semibolditalic.ttf
+        - asset: assets/fonts/barlow-condensed-semibolditalic.ttf
           weight: 600
           style: italic
-        - asset: assets/fonts/work-sans-bold.ttf
+        - asset: assets/fonts/barlow-condensed-bold.ttf
           weight: 700
-        - asset: assets/fonts/work-sans-bolditalic.ttf
+        - asset: assets/fonts/barlow-condensed-bolditalic.ttf
           weight: 700
           style: italic
-        - asset: assets/fonts/work-sans-extrabold.ttf
+        - asset: assets/fonts/barlow-condensed-extrabold.ttf
           weight: 800
-        - asset: assets/fonts/work-sans-extrabolditalic.ttf
+        - asset: assets/fonts/barlow-condensed-extrabolditalic.ttf
           weight: 800
           style: italic
-        - asset: assets/fonts/work-sans-black.ttf
+        - asset: assets/fonts/barlow-condensed-black.ttf
           weight: 900
-        - asset: assets/fonts/work-sans-blackitalic.ttf
+        - asset: assets/fonts/barlow-condensed-blackitalic.ttf
           weight: 900
           style: italic
 

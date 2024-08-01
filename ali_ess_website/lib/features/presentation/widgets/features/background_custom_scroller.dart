@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../core/util/responsive_size_adapter.dart';
 import '../../../../locator.dart';
 import '../../controllers/persisted_background/persisted_background_controller.dart';
 
@@ -28,9 +27,6 @@ class _BackgroundCustomScrollerState extends State<BackgroundCustomScroller> {
   void _scrollListener() {
     double currentOffset = _controller.offset;
     double scrollSpeed = currentOffset - _previousOffset;
-
-    print("Current Offset: $currentOffset");
-    print("Scroll Speed: $scrollSpeed");
 
     setState(() {
       _scrollSpeed = scrollSpeed;
@@ -61,10 +57,7 @@ class _BackgroundCustomScrollerState extends State<BackgroundCustomScroller> {
 
   @override
   Widget build(BuildContext context) {
-    // responsive px adapter
-    final ResponsiveSizeAdapter R = ResponsiveSizeAdapter(context);
-
-    return NotificationListener<ScrollNotification>(
+    return NotificationListener<ScrollEndNotification>(
       onNotification: (notification) {
         _scrollListener();
         return true;

@@ -9,6 +9,8 @@ import '../../../../core/util/responsive_size_adapter.dart';
 import '../../../../locator.dart';
 import '../../widgets/common/custom_field.dart';
 import '../../widgets/features/background_custom_scroller.dart';
+import 'components/footer.dart';
+import 'components/header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -51,14 +53,20 @@ class _HomeScreenState extends State<HomeScreen> {
         const PersistedBackground(),
         Expanded(
           child: BackgroundCustomScroller(
-            reverse: true,
-            child: Beamer(
-              routerDelegate: HomeRoutes.homeBeamerDelegate,
-              backButtonDispatcher: BeamerBackButtonDispatcher(
-                delegate: HomeRoutes.homeBeamerDelegate,
-              ),
-            ),
-          ),
+              reverse: false,
+              child: CustomField(
+                arrangement: FieldArrangement.column,
+                children: [
+                  const HeaderComponent(),
+                  Beamer(
+                    routerDelegate: HomeRoutes.homeBeamerDelegate,
+                    backButtonDispatcher: BeamerBackButtonDispatcher(
+                      delegate: HomeRoutes.homeBeamerDelegate,
+                    ),
+                  ),
+                  const FooterComponent(),
+                ],
+              )),
         ),
       ],
     );

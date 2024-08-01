@@ -1,9 +1,10 @@
+import 'package:ali_ess_website/core/constants/app_paths.dart';
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../../../../core/constants/app_colors.dart';
-import '../../../../../core/constants/app_paths.dart';
 import '../../../../../core/enums/app_enums.dart';
+import '../../../../../core/util/events_util.dart';
 import '../../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../../core/util/responsive_size_adapter.dart';
 import '../../../widgets/common/custom_button.dart';
@@ -39,32 +40,57 @@ class _NavigatorComponentState extends State<NavigatorComponent> {
           CustomButton(
             iconPosition: CustomButtonIconPosition.left,
             text: 'Dashboard',
-            textSize: R.size(16),
+            textSize: R.size(18),
             fontWeight: FontWeight.w400,
+            onPressed: () {
+              EventsUtil.routeEvents
+                  .updatePath(context, AppPaths.routes.dashboardScreen);
+              Beamer.of(context).beamToNamed(AppPaths.routes.dashboardScreen);
+            },
           ),
           CustomButton(
             iconPosition: CustomButtonIconPosition.left,
             text: 'About me',
-            textSize: R.size(16),
+            textSize: R.size(18),
             fontWeight: FontWeight.w400,
+            onPressed: () {
+              EventsUtil.routeEvents
+                  .updatePath(context, AppPaths.routes.aboutMeScreen);
+              Beamer.of(context).beamToNamed(AppPaths.routes.aboutMeScreen);
+            },
           ),
           CustomButton(
             iconPosition: CustomButtonIconPosition.left,
             text: 'My portfolio',
-            textSize: R.size(16),
+            textSize: R.size(18),
             fontWeight: FontWeight.w400,
+            onPressed: () {
+              EventsUtil.routeEvents
+                  .updatePath(context, AppPaths.routes.myPortfolioScreen);
+              Beamer.of(context).beamToNamed(AppPaths.routes.myPortfolioScreen);
+            },
           ),
           CustomButton(
             iconPosition: CustomButtonIconPosition.left,
             text: 'My blog',
             textSize: R.size(16),
             fontWeight: FontWeight.w400,
+            onPressed: () {
+              EventsUtil.routeEvents
+                  .updatePath(context, AppPaths.routes.myBlogScreen);
+              Beamer.of(context).beamToNamed(AppPaths.routes.myBlogScreen);
+            },
           ),
           CustomButton(
             iconPosition: CustomButtonIconPosition.left,
             text: 'Contact me',
             textSize: R.size(16),
             fontWeight: FontWeight.w400,
+            onPressed: () {
+              EventsUtil.routeEvents
+                  .updatePath(context, AppPaths.routes.contactMeScreen);
+              Beamer.of(context).beamToNamed(AppPaths.routes.contactMeScreen);
+            },
           ),
         ]);
   }
