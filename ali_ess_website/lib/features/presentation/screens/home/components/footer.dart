@@ -122,7 +122,7 @@ class _HeaderComponentState extends State<FooterComponent> {
               text: '© 2024 Ali Salem Essouiah. All Rights Reserved.',
               fontSize: R.size(20),
               fontWeight: FontWeight.w300,
-              color: AppColors.dark.primaryColor2.withOpacity(0.4),
+              color: AppColors.dark.primaryColor2.withOpacity(0.6),
             ),
           ),
         ]);

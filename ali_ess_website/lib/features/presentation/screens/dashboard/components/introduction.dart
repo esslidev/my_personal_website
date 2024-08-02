@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:ali_ess_website/features/presentation/widgets/common/custom_display.dart';
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +8,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../../../../core/constants/app_colors.dart';
 import '../../../../../core/constants/app_paths.dart';
 import '../../../../../core/enums/app_enums.dart';
+import '../../../../../core/util/app_util.dart';
+import '../../../../../core/util/custom_timer.dart';
 import '../../../../../core/util/events_util.dart';
 import '../../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../../core/util/responsive_size_adapter.dart';
@@ -23,10 +27,37 @@ class IntroductionComponent extends StatefulWidget {
 class _IntroductionComponentState extends State<IntroductionComponent> {
   late ResponsiveSizeAdapter R;
 
+  int currentIndex = 0;
+  late Timer timer;
+  List<String> introductionTitles = [
+    'PROFESSIONAL FLUTTER DEVELOPER',
+    'EXPERIENCED MERN DEVELOPER',
+    'INFORMATION SYSTEMS ENGINEER',
+    'UI/UX GENERALIST',
+  ];
+
   @override
   void initState() {
     super.initState();
     R = ResponsiveSizeAdapter(context);
+    // Set up the timer to change text every 4000 ms
+    timer = Timer.periodic(4000.ms, (Timer t) {
+      setState(() {
+        if (currentIndex < 3) {
+          currentIndex = (currentIndex + 1);
+        } else {
+          currentIndex = 0;
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    // Cancel the timer to prevent memory leaks
+    timer.cancel();
+    currentIndex = 0;
+    super.dispose();
   }
 
   @override
@@ -71,23 +102,33 @@ class _IntroductionComponentState extends State<IntroductionComponent> {
                     width: R.size(800),
                     gap: R.size(20),
                     children: [
-                      CustomText(
-                        text: 'PROFESSIONAL WEB DEVELOPER',
-                        selectable: true,
-                        fontSize: R.size(60),
-                        letterSpacing: R.size(6),
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.dark.primaryColor2,
+                      AnimatedSwitcher(
+                        duration: 300.ms,
+                        transitionBuilder:
+                            (Widget child, Animation<double> animation) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: SizeTransition(
+                              sizeFactor: animation,
+                              axis: Axis.vertical,
+                              child: child,
+                            ),
+                          );
+                        },
+                        child: CustomText(
+                          key: ValueKey<String>(
+                              introductionTitles[currentIndex]),
+                          text: introductionTitles[currentIndex],
+                          selectable: true,
+                          fontSize: R.size(60),
+                          letterSpacing: R.size(6),
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.dark.primaryColor2,
+                        ),
                       ),
-                      /*.animate(onPlay: (controller) => controller.repeat())
-                          .shimmer(
-                            color: AppColors.dark.primaryColor3,
-                            duration: 500.ms,
-                            delay: 3000.ms,
-                          ) */
                       CustomText(
                         text:
-                            'Crafting innovative solutions with expertise in Flutter and the MERN stack. Let’s connect and explore new opportunities!',
+                            'Crafting innovative solutions with expertise in Flutter, the MERN stack, backend development, and system development. Let’s connect and explore new opportunities!',
                         selectable: true,
                         fontSize: R.size(24),
                         fontWeight: FontWeight.w400,
@@ -108,6 +149,7 @@ class _IntroductionComponentState extends State<IntroductionComponent> {
                             CustomButton(
                               text: 'Get in touch',
                               textSize: R.size(24),
+                              fontWeight: FontWeight.w500,
                               padding: EdgeInsets.symmetric(
                                   vertical: R.size(10), horizontal: R.size(20)),
                               backgroundColor: AppColors.dark.primaryColor1,
@@ -134,6 +176,7 @@ class _IntroductionComponentState extends State<IntroductionComponent> {
                             CustomButton(
                               text: 'Download My Resume',
                               textSize: R.size(24),
+                              fontWeight: FontWeight.w400,
                               padding: EdgeInsets.symmetric(
                                   vertical: R.size(10), horizontal: R.size(20)),
                               iconWidth: R.size(36),
@@ -141,8 +184,18 @@ class _IntroductionComponentState extends State<IntroductionComponent> {
                               onHoverStyle: CustomButtonStyle(
                                 textColor: AppColors.dark.primaryColor4,
                               ),
-                              onPressed: () async {},
+                              onPressed: () async {
+                                AppUtil.launchURL(
+                                    'https://drive.google.com/file/d/1RV5Ynod9Fgb3G0Rwp8Sa4TmeTUUg5bm8/view?usp=sharing');
+                              },
                             )
+                                .animate(
+                                    onPlay: (controller) => controller.repeat())
+                                .shimmer(
+                                  color: AppColors.dark.primaryColor4,
+                                  duration: 500.ms,
+                                  delay: 3000.ms,
+                                ),
                           ])
                     ])
               ])

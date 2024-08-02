@@ -4,8 +4,8 @@ class AppColors {
   // global colors
   static const Color blackSatinDeep = Color(0xFF0E0C18);
   static const Color whiteSolid = Color(0xFFFFFFFF);
-  static const Color whiteTitanium = Color.fromARGB(255, 203, 203, 221);
-  static const Color yellowColombianGold = Color(0xFF97985D);
+  static const Color whiteTitanium = Color(0xFFCBCBDD);
+  static const Color yellowColombianGold = Color(0xFFA2A360);
   static const Color greenCalliste = Color(0xFF5B574B);
   static LightTheme get light => LightTheme();
   static DarkTheme get dark => DarkTheme();

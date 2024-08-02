@@ -1,4 +1,6 @@
 class AppPaths {
+  static FilesPaths get files => FilesPaths();
+
   static FontsPaths get fonts => FontsPaths();
 
   static IconsPaths get icons => IconsPaths();
@@ -8,6 +10,10 @@ class AppPaths {
   static VectorsPaths get vectors => VectorsPaths();
 
   static RoutesPaths get routes => RoutesPaths();
+}
+
+class FilesPaths {
+  final String aliResume = 'assets/files/ali-salem-essouiah-resume.pdf';
 }
 
 class FontsPaths {
