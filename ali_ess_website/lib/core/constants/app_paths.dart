@@ -24,8 +24,6 @@ class IconsPaths {
 
 class ImagesPaths {
   final String logo = 'assets/images/logo.png';
-  final String defaultProfilePicture =
-      'assets/images/default-profile-picture.jpg';
   final String profilePicture = 'assets/images/profile-picture.jpg';
 }
 

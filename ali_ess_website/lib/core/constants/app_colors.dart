@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // global colors
-  static const Color blackSatinDeep = Color(0xFF1C1C20);
+  static const Color blackSatinDeep = Color(0xFF0E0C18);
   static const Color whiteSolid = Color(0xFFFFFFFF);
-  static const Color whiteTitanium = Color(0xFFE3E3E4);
+  static const Color whiteTitanium = Color.fromARGB(255, 203, 203, 221);
   static const Color yellowColombianGold = Color(0xFF97985D);
   static const Color greenCalliste = Color(0xFF5B574B);
   static LightTheme get light => LightTheme();
@@ -15,6 +15,7 @@ class LightTheme {
   final Color primaryColor1 = AppColors.greenCalliste;
   final Color primaryColor2 = AppColors.yellowColombianGold;
   final Color primaryColor3 = AppColors.whiteTitanium;
+  final Color primaryColor4 = AppColors.whiteSolid;
 }
 
 class DarkTheme {
@@ -24,4 +25,5 @@ class DarkTheme {
   final Color primaryColor1 = AppColors.greenCalliste;
   final Color primaryColor2 = AppColors.yellowColombianGold;
   final Color primaryColor3 = AppColors.whiteTitanium;
+  final Color primaryColor4 = AppColors.whiteSolid;
 }

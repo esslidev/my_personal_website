@@ -19,6 +19,7 @@ class CustomField extends StatefulWidget {
   final double? height;
   final double gap; // New gap parameter
   final bool wrap; // New wrap parameter
+  final double? minHeight; // New minHeight parameter
 
   const CustomField({
     super.key,
@@ -38,6 +39,7 @@ class CustomField extends StatefulWidget {
     this.height,
     this.gap = 0.0, // Default value for gap
     this.wrap = false, // Default value for wrap
+    this.minHeight, // Default value for minHeight
   });
 
   @override
@@ -105,15 +107,21 @@ class _CustomFieldState extends State<CustomField> {
           width: widget.borderWidth,
         ),
       ),
-      child: widget.wrap && widget.arrangement == FieldArrangement.row
-          ? Wrap(
-              spacing: widget.gap,
-              runSpacing: widget.gap,
-              alignment: widget.mainAxisAlignment.wrapAlignment,
-              crossAxisAlignment: widget.crossAxisAlignment.wrapCrossAlignment,
-              children: widget.children,
-            )
-          : content,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: widget.minHeight ?? 0.0, // Apply minHeight
+        ),
+        child: widget.wrap && widget.arrangement == FieldArrangement.row
+            ? Wrap(
+                spacing: widget.gap,
+                runSpacing: widget.gap,
+                alignment: widget.mainAxisAlignment.wrapAlignment,
+                crossAxisAlignment:
+                    widget.crossAxisAlignment.wrapCrossAlignment,
+                children: widget.children,
+              )
+            : content,
+      ),
     );
   }
 }

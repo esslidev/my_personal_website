@@ -43,7 +43,7 @@ class _PersistedBackgroundState extends State<PersistedBackground>
     star.z = randomZ ? rand.nextDouble() * _maxZ : _maxZ;
 
     if (rand.nextDouble() < .1) {
-      star.color = AppColors.dark.primaryColor1.withOpacity(.8);
+      star.color = AppColors.dark.primaryColor2.withOpacity(.8);
       star.size = 8 + rand.nextDouble() * 8;
     } else {
       star.color = AppColors.dark.primaryColor3.withOpacity(.8);

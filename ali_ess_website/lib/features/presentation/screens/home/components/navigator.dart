@@ -1,3 +1,4 @@
+import 'package:ali_ess_website/core/constants/app_colors.dart';
 import 'package:ali_ess_website/core/constants/app_paths.dart';
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,11 @@ class _NavigatorComponentState extends State<NavigatorComponent> {
             iconPosition: CustomButtonIconPosition.left,
             text: 'Dashboard',
             textSize: R.size(18),
+            textColor: AppColors.dark.primaryColor3,
             fontWeight: FontWeight.w400,
+            onHoverStyle: CustomButtonStyle(
+              textColor: AppColors.dark.primaryColor4,
+            ),
             onPressed: () {
               EventsUtil.routeEvents
                   .updatePath(context, AppPaths.routes.dashboardScreen);
@@ -53,6 +58,10 @@ class _NavigatorComponentState extends State<NavigatorComponent> {
             text: 'About me',
             textSize: R.size(18),
             fontWeight: FontWeight.w400,
+            textColor: AppColors.dark.primaryColor3,
+            onHoverStyle: CustomButtonStyle(
+              textColor: AppColors.dark.primaryColor4,
+            ),
             onPressed: () {
               EventsUtil.routeEvents
                   .updatePath(context, AppPaths.routes.aboutMeScreen);
@@ -64,6 +73,10 @@ class _NavigatorComponentState extends State<NavigatorComponent> {
             text: 'My portfolio',
             textSize: R.size(18),
             fontWeight: FontWeight.w400,
+            textColor: AppColors.dark.primaryColor3,
+            onHoverStyle: CustomButtonStyle(
+              textColor: AppColors.dark.primaryColor4,
+            ),
             onPressed: () {
               EventsUtil.routeEvents
                   .updatePath(context, AppPaths.routes.myPortfolioScreen);
@@ -75,6 +88,10 @@ class _NavigatorComponentState extends State<NavigatorComponent> {
             text: 'My blog',
             textSize: R.size(16),
             fontWeight: FontWeight.w400,
+            textColor: AppColors.dark.primaryColor3,
+            onHoverStyle: CustomButtonStyle(
+              textColor: AppColors.dark.primaryColor4,
+            ),
             onPressed: () {
               EventsUtil.routeEvents
                   .updatePath(context, AppPaths.routes.myBlogScreen);
@@ -86,6 +103,10 @@ class _NavigatorComponentState extends State<NavigatorComponent> {
             text: 'Contact me',
             textSize: R.size(16),
             fontWeight: FontWeight.w400,
+            textColor: AppColors.dark.primaryColor3,
+            onHoverStyle: CustomButtonStyle(
+              textColor: AppColors.dark.primaryColor4,
+            ),
             onPressed: () {
               EventsUtil.routeEvents
                   .updatePath(context, AppPaths.routes.contactMeScreen);

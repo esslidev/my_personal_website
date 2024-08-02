@@ -9,6 +9,7 @@ class CustomText extends StatelessWidget {
   final TextStyle? style;
   final Color? color;
   final double? fontSize;
+  final double? textSize;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
   final String? svgIconPath;
@@ -21,7 +22,8 @@ class CustomText extends StatelessWidget {
   final EdgeInsets? margin;
   final int? maxLines;
   final TextOverflow? overflow;
-  final double? lineHeight; // Add line height property
+  final double? lineHeight;
+  final bool selectable;
 
   const CustomText({
     super.key,
@@ -29,6 +31,7 @@ class CustomText extends StatelessWidget {
     this.style,
     this.color,
     this.fontSize,
+    this.textSize,
     this.fontWeight,
     this.textAlign,
     this.svgIconPath,
@@ -41,16 +44,40 @@ class CustomText extends StatelessWidget {
     this.margin,
     this.maxLines,
     this.overflow,
-    this.lineHeight, // Initialize line height property
+    this.lineHeight,
+    this.selectable = false,
   });
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = (style ?? AppThemes.bodyText).copyWith(
+      color: color,
+      fontSize: textSize ?? fontSize,
+      fontWeight: fontWeight,
+      letterSpacing: letterSpacing,
+      height: lineHeight, // Adjust line height
+    );
+
+    final textWidget = selectable
+        ? SelectableText(
+            text,
+            style: textStyle,
+            textAlign: textAlign,
+            maxLines: maxLines,
+          )
+        : Text(
+            text,
+            style: textStyle,
+            textAlign: textAlign,
+            maxLines: maxLines,
+            overflow: overflow ?? TextOverflow.clip,
+            softWrap: true,
+          );
+
     return Container(
       padding: padding,
       margin: margin,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           if (svgIconPath != null && svgIconPath!.isNotEmpty)
             SvgPicture.asset(
@@ -63,19 +90,8 @@ class CustomText extends StatelessWidget {
             SizedBox(
               width: iconTextPadding ?? ResponsiveSizeAdapter(context).size(8),
             ),
-          Text(
-            text,
-            softWrap: true,
-            style: (style ?? AppThemes.bodyText).copyWith(
-              color: color,
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              letterSpacing: letterSpacing,
-              height: lineHeight, // Set line height here
-            ),
-            textAlign: textAlign,
-            maxLines: maxLines,
-            overflow: overflow,
+          Expanded(
+            child: textWidget,
           ),
         ],
       ),

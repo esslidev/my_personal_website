@@ -1,3 +1,5 @@
+import 'package:url_launcher/url_launcher.dart';
+
 class AppUtil {
   static String capitalizeFirstLetter(String input) {
     return input.isNotEmpty
@@ -26,5 +28,14 @@ class AppUtil {
     bool containsNumbers = RegExp(r'\d').hasMatch(password);
 
     return containsLetters && containsNumbers;
+  }
+
+  static Future<void> launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
