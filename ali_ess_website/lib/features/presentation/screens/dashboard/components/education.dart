@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../../../core/constants/app_colors.dart';
-import '../../../../../core/constants/app_paths.dart';
 import '../../../../../core/enums/app_enums.dart';
 import '../../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../../core/util/responsive_size_adapter.dart';
-import '../../../widgets/common/custom_button.dart';
 import '../../../widgets/common/custom_text.dart';
 import '../../../widgets/common/custom_field.dart';
 

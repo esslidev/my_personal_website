@@ -9,7 +9,6 @@ import '../../../../../core/constants/app_colors.dart';
 import '../../../../../core/constants/app_paths.dart';
 import '../../../../../core/enums/app_enums.dart';
 import '../../../../../core/util/app_util.dart';
-import '../../../../../core/util/custom_timer.dart';
 import '../../../../../core/util/events_util.dart';
 import '../../../../../core/util/responsive_screen_adapter.dart';
 import '../../../../../core/util/responsive_size_adapter.dart';

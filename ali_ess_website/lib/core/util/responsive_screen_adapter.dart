@@ -23,19 +23,14 @@ class ResponsiveScreenAdapter extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
 
     if (screenMobile != null && width < 768) {
-      print('mobile');
       return screenMobile!;
     } else if (screenMobileTablet != null && width < 1200 && width >= 768) {
-      print('mobileTablet');
       return screenMobileTablet!;
     } else if (screenTablet != null && width < 992 && width >= 768) {
-      print('tablet');
       return screenTablet!;
     } else if (screenTabletDesktop != null && width < 1200 && width >= 992) {
-      print('tabletDesktop');
       return screenTabletDesktop!;
     } else if (screenDesktop != null && width >= 1200) {
-      print('desktop');
       return screenDesktop!;
     } else if (defaultScreen != null) {
       return defaultScreen!;

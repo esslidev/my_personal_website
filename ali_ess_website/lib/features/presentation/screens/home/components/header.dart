@@ -1,7 +1,6 @@
 import 'package:ali_ess_website/features/presentation/screens/home/components/navigator.dart';
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/constants/app_paths.dart';
 import '../../../../../core/enums/app_enums.dart';
