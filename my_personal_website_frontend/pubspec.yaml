@@ -1,0 +1,120 @@
+name: my_personal_website_frontend
+description: "Ali Salem Essouiah | Full Stack & Systems Developer. This personal website showcases my expertise in building scalable digital solutions, from frontend experiences to backend architectures. Passionate about problem-solving, clean design, and cutting-edge technologies."
+publish_to: 'none'
+version: 1.0.0
+license: All Rights Reserved
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  collection: ^1.19.1
+  beamer: ^1.7.0
+  equatable: ^2.0.7
+  flutter_animate: ^4.5.2
+  flutter_bloc: ^9.1.0
+  flutter_native_splash: ^2.4.5
+  flutter_svg: ^2.0.17
+  get_it: ^8.0.3
+  json_annotation: ^4.9.0
+  logger: ^2.5.0
+  shared_preferences: ^2.5.2
+  url_launcher: ^6.3.1
+  percent_indicator: ^4.2.4
+  lottie: ^3.3.1
+  carousel_slider: ^5.0.0
+  syncfusion_flutter_datepicker: ^28.2.11
+  webview_flutter: ^4.10.0
+  intl: ^0.19.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  json_serializable: ^6.9.4
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icon.png"
+  web:
+    generate: true
+    image_path: "assets/icons/icon.png"
+    background_color: "#141516"
+    theme_color: "#141516"
+  windows:
+    generate: true
+    image_path: "assets/icons/icon.png"
+    icon_size: 256 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/icon.png"
+
+flutter:
+  assets:
+    - assets/vectors/
+    - assets/images/
+    - assets/animated_images/
+    - assets/icons/
+    - assets/translations/
+  fonts:
+    - family: dm_serif_display
+      fonts:
+        - asset: assets/fonts/dm_serif_display/dm-serif-display-regular.ttf
+          weight: 400
+        - asset: assets/fonts/dm_serif_display/dm-serif-display-regularitalic.ttf
+          weight: 400
+          style: italic
+    - family: public_sans
+      fonts:
+        - asset: assets/fonts/public_sans/public-sans-thin.ttf
+          weight: 100
+        - asset: assets/fonts/public_sans/public-sans-thinitalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-extralight.ttf
+          weight: 200
+        - asset: assets/fonts/public_sans/public-sans-extralightitalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-light.ttf
+          weight: 300
+        - asset: assets/fonts/public_sans/public-sans-lightitalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-regular.ttf
+          weight: 400
+        - asset: assets/fonts/public_sans/public-sans-medium.ttf
+          weight: 500
+        - asset: assets/fonts/public_sans/public-sans-mediumitalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-semibold.ttf
+          weight: 600
+        - asset: assets/fonts/public_sans/public-sans-semibolditalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-bold.ttf
+          weight: 700
+        - asset: assets/fonts/public_sans/public-sans-bolditalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-extrabold.ttf
+          weight: 800
+        - asset: assets/fonts/public_sans/public-sans-extrabolditalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/public_sans/public-sans-black.ttf
+          weight: 900
+        - asset: assets/fonts/public_sans/public-sans-blackitalic.ttf
+          weight: 900
+          style: italic
+
+  uses-material-design: true

@@ -1,0 +1,12 @@
+services:
+  # PROJECT FRONTEND
+  ali-personal-website-frontend:
+    container_name: ali-personal-website-frontend
+    restart: always
+    build:
+      context: ./my_personal_website_frontend
+      dockerfile: Dockerfile
+      args:
+        - DART_VM_PRODUCT=true
+    ports:
+      - '3003:80'
