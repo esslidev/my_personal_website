@@ -28,6 +28,13 @@ class ImagesPaths {
   //projects
   final String travingloAppProject = 'assets/images/travinglo-app-project.webp';
   final String travinglo2Project = 'assets/images/travinglo-2-project.webp';
+  final String luxoraCosmeticsProject =
+      'assets/images/luxora-cosmetics-project.webp';
+  final String backendSystemProject =
+      'assets/images/backend-system-project.webp';
+  final String flutterSystemProject =
+      'assets/images/flutter-system-project.webp';
+  final String reactSystemProject = 'assets/images/react-system-project.webp';
   //profile images
   final String youssefProfileImage = 'assets/images/youssef-profile-image.webp';
   final String kaoutarProfileImage = 'assets/images/kaoutar-profile-image.webp';

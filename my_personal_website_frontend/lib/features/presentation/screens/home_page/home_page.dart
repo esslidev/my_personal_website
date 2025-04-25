@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_personal_website_frontend/core/constants/app_constants.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_paths.dart';
@@ -52,24 +53,20 @@ class _HomePageScreenState extends State<HomePageScreen> {
           reverse: false,
 
           onScroll: (double offset) {
-            if (offset <=
-                (AppUtil.getPositionByGlobalKey(_introKey).dy +
-                    AppUtil.getSizeByGlobalKey(_introKey).height +
-                    r.size(100))) {
-              _activeButtonNotifier.value = 1;
-            } else if (offset <=
-                (AppUtil.getPositionByGlobalKey(_aboutKey).dy +
-                    AppUtil.getSizeByGlobalKey(_aboutKey).height +
-                    AppUtil.getSizeByGlobalKey(_skillsTechsKey).height +
-                    r.size(200))) {
-              _activeButtonNotifier.value = 2;
-            } else if (offset <=
-                (AppUtil.getPositionByGlobalKey(_portfolioKey).dy +
-                    AppUtil.getSizeByGlobalKey(_portfolioKey).height +
-                    r.size(100))) {
-              _activeButtonNotifier.value = 3;
-            } else {
+            if (AppUtil.getPositionByGlobalKey(_getInTouchKey).dy -
+                    r.size(100) <
+                0) {
               _activeButtonNotifier.value = 4;
+            } else if (AppUtil.getPositionByGlobalKey(_portfolioKey).dy -
+                    r.size(10) <
+                0) {
+              _activeButtonNotifier.value = 3;
+            } else if (AppUtil.getPositionByGlobalKey(_aboutKey).dy -
+                    r.size(10) <
+                0) {
+              _activeButtonNotifier.value = 2;
+            } else {
+              _activeButtonNotifier.value = 1;
             }
           },
           child: CustomField(
@@ -208,6 +205,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 projects: [
                   PortfolioProject(
                     imagePath: AppPaths.images.travinglo2Project,
+                    prjectUrl: travingloProjectUrl,
                     title: 'Travinglo 2.0 – Cross-Platform Enhanced Version',
                     techs: [
                       'Flutter',
@@ -223,7 +221,78 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         'Travinglo 2.0 is a revamped cross-platform language learning app with multi-theme and multi-language support, online features, and a modern design for an enhanced user experience.',
                   ),
                   PortfolioProject(
+                    imagePath: AppPaths.images.luxoraCosmeticsProject,
+                    prjectUrl: luxoraProjectUrl,
+                    title: 'Luxora Cosmetics - Website',
+                    techs: [
+                      'Flutter',
+                      'Dart',
+                      'Custom Clean Architecture',
+                      'BLoC',
+                      'Hive',
+                      'Json',
+                      'Beamer',
+                      'Ali\'s Backend System',
+                    ],
+                    description:
+                        'Luxora is a sleek and elegant cosmetics website crafted to highlight premium beauty products with a refined and user-friendly design. It offers a smooth shopping experience, featuring high-quality visuals, intuitive navigation, and a modern aesthetic that reflects the luxury of the brand.',
+                  ),
+                  PortfolioProject(
+                    imagePath: AppPaths.images.flutterSystemProject,
+                    prjectUrl: flutterSystemProjectUrl,
+                    title: 'Ali\'s Advanced Custom Flutter System',
+                    techs: [
+                      'Flutter',
+                      'Dart',
+                      'Custom Clean Architecture',
+                      'BLoC',
+                      'GetIt',
+                      'Beamer',
+                      'Retrofit',
+                      'build_runner',
+                      'Hive',
+                      'Json',
+                      'Built-in Utils',
+                      'Built-in Widgets',
+                    ],
+                    description:
+                        'A robust and scalable Flutter system built with custom clean architecture principles. This project integrates advanced state management using BLoC, efficient routing with Beamer, and powerful dependency injection through GetIt. It features modular design, code generation via build_runner, and local storage with Hive — all tailored to support both web and mobile platforms with high performance and maintainability.',
+                  ),
+                  PortfolioProject(
+                    imagePath: AppPaths.images.reactSystemProject,
+                    prjectUrl: reactSystemProjectUrl,
+                    title: 'Ali\'s Advanced Custom React System',
+                    techs: [
+                      'React js',
+                      'Redux',
+                      'Clean architecture',
+                      'Typescript',
+                      'Css',
+                      'Sass',
+                      'Built-in Utils',
+                      'Built-in Components',
+                    ],
+                    description:
+                        'A highly structured and scalable React system built with clean architecture and TypeScript. It features robust state management using Redux, reusable built-in components and utilities, and a modular design for maintainability and reusability. Styled with CSS and Sass, the system is optimized for performance and perfect for large-scale web applications.',
+                  ),
+                  PortfolioProject(
+                    imagePath: AppPaths.images.backendSystemProject,
+                    prjectUrl: customBackendSystemProjectUrl,
+                    title: 'Ali\'s Custom Backend System',
+                    techs: [
+                      'Node.js',
+                      'Express',
+                      'Prisma',
+                      'MVC architecture',
+                      'mySql',
+                      'PostgreSql',
+                    ],
+                    description:
+                        'A powerful and flexible backend system built using Node.js, Express, and Prisma. Designed with MVC architecture, it supports both MySQL and PostgreSQL databases. The system features clean and scalable code structure, efficient API handling, and is optimized for integration with modern frontend frameworks and real-world applications.',
+                  ),
+                  PortfolioProject(
                     imagePath: AppPaths.images.travingloAppProject,
+                    prjectUrl: travingloOldProjectUrl,
                     title: 'Travinglo Learning Languages App',
                     techs: ['Kotlin', 'MVVM Architecture', 'XML', 'Sqlite'],
                     description:

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:my_personal_website_frontend/core/util/app_util.dart';
+import 'package:my_personal_website_frontend/features/presentation/widgets/common/custom_button.dart';
 
 import '../../../../../core/constants/app_colors.dart';
 import '../../../../../core/util/responsive_screen_adapter.dart';
@@ -10,11 +13,13 @@ import '../../../widgets/features/custom_title.dart';
 
 class PortfolioProject {
   final String imagePath;
+  final String? prjectUrl;
   final String title;
   final List<String> techs;
   final String description;
   const PortfolioProject({
     required this.imagePath,
+    this.prjectUrl,
     required this.title,
     required this.techs,
     required this.description,
@@ -46,9 +51,9 @@ class _PortfolioState extends State<Portfolio> {
     );
   }
 
-  Widget _buildSupportedOs({required String osName}) {
+  Widget _buildUsedTechContainer({required String tech}) {
     return CustomText(
-      text: osName,
+      text: tech,
       fontSize: r.size(7),
       fontWeight: FontWeight.w300,
       padding: r.symmetric(vertical: 2, horizontal: 6),
@@ -57,9 +62,25 @@ class _PortfolioState extends State<Portfolio> {
     );
   }
 
+  Widget _buildGetLinkButton({required String projectUrl}) {
+    return CustomButton(
+      text: 'Get Link',
+      fontSize: r.size(7),
+      textColor: AppColors.colors.black,
+      lineHeight: 1,
+      padding: r.symmetric(vertical: 4, horizontal: 9),
+      borderRadius: BorderRadius.circular(r.size(1)),
+      backgroundColor: AppColors.colors.white,
+      animationDuration: 200.ms,
+      onPressed: (position, size) {
+        AppUtil.launchURL(projectUrl);
+      },
+    );
+  }
+
   Widget _buildCard({required PortfolioProject project, double? maxWidth}) {
     return CustomField(
-      minHeight: r.size(330),
+      minHeight: r.size(380),
       maxWidth: maxWidth,
       backgroundColor: AppColors.colors.white.withValues(alpha: .05),
       width: r.size(320),
@@ -71,12 +92,24 @@ class _PortfolioState extends State<Portfolio> {
       padding: r.all(9),
       gap: r.size(18),
       children: [
-        CustomDisplay(
-          assetPath: project.imagePath,
-          width: r.size(320),
-          height: r.size(180),
-          borderRadius: BorderRadius.circular(r.size(2)),
-          fit: BoxFit.cover,
+        Stack(
+          children: [
+            CustomDisplay(
+              assetPath: project.imagePath,
+              width: r.size(320),
+              height: r.size(180),
+              borderRadius: BorderRadius.circular(r.size(2)),
+              fit: BoxFit.cover,
+            ),
+            Positioned(
+              top: r.size(4),
+              left: r.size(4),
+              child:
+                  project.prjectUrl != null
+                      ? _buildGetLinkButton(projectUrl: project.prjectUrl!)
+                      : SizedBox(),
+            ),
+          ],
         ),
         CustomField(
           gap: r.size(9),
@@ -97,7 +130,7 @@ class _PortfolioState extends State<Portfolio> {
                   arrangement: FieldArrangement.row,
                   children:
                       project.techs.map((tech) {
-                        return _buildSupportedOs(osName: tech);
+                        return _buildUsedTechContainer(tech: tech);
                       }).toList(),
                 ),
               ],

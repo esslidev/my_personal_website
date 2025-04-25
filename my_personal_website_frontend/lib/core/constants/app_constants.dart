@@ -15,4 +15,13 @@ String get upworkPath =>
 
 // Resume and projects
 String get cvPath => 'https://cv.aliess.me/';
-String get project1Path => 'https://project1.aliess.me/';
+String get luxoraProjectUrl => 'https://project1.aliess.me/';
+String get travingloOldProjectUrl =>
+    'https://github.com/esslidev/travinglo-old';
+String get travingloProjectUrl => 'https://github.com/esslidev/travinglo';
+String get customBackendSystemProjectUrl =>
+    'https://github.com/esslidev/backend_system';
+String get flutterSystemProjectUrl =>
+    'https://github.com/esslidev/ali_salem_advanced_flutter_system';
+String get reactSystemProjectUrl =>
+    'https://github.com/esslidev/custom_react_native_architecture';
